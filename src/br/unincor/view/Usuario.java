@@ -31,11 +31,25 @@ public class Usuario {
 	}
 
 	public Long recebeLong(String texto) {
-		return Long.parseLong(JOptionPane.showInputDialog(texto));
+		try {
+			String resposta = JOptionPane.showInputDialog(texto);
+			Long respostaConvertida = Long.parseLong(resposta);
+			return respostaConvertida;
+		} catch (Exception e) {
+			exibeMsg("Entrada inválida! Entre com valores positivos!");
+		}
+		return null;
 	}
 
 	public Double recebeDouble(String texto) {
-		return Double.parseDouble(JOptionPane.showInputDialog(texto));
+		try {
+			String resposta = JOptionPane.showInputDialog(texto);
+			Double respostaConvertida = Double.parseDouble(resposta);
+			return respostaConvertida;
+		} catch (Exception e) {
+			exibeMsg("Entrada inválida! Entre com valores positivos!");
+		}
+		return null;
 	}
 
 	public Float recebeFloat(String texto) {

@@ -2,10 +2,21 @@ package br.unincor.controle;
 
 import java.util.List;
 
+import br.unincor.exception.EvolucaoException;
+
 import br.unincor.model.Pokemon;
 
 public class Operacoes {
 	
+	public void evoluirPokemon(Pokemon p) throws EvolucaoException {
+		Long pontos = (long) Math.random()*100+50;
+		
+		if(pontos < 80)
+			throw new EvolucaoException(p);
+		else
+			p.setCp(20l);
+		
+	}
 	/**
 	 * Fazer com que este método não retorne nada e
 	 * lance a 'EvolucaoException' quando o pokemon
